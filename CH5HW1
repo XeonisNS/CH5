@@ -1,0 +1,33 @@
+/*Malcolm Ealy
+ * mxealy0001@student.stcc.edu
+ * 10/25/21
+ * CSC-111
+ * Homework 7 (Chapter 5)
+ * Detect common prefixes 
+ */
+
+import java.util.Scanner;
+
+public class CH5HW1 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the first string: ");
+		String string1 = input.nextLine();
+		System.out.print("Enter the second string: ");
+		String string2 = input.nextLine();
+		input.close();
+		
+		int character = 0;
+		String prefix = "";
+		while (string1.charAt(character) == string2.charAt(character)) {
+			prefix += string1.charAt(character);
+			character++;
+		}
+			if (prefix.length() > 0)
+				System.out.println("The prefix " + prefix + " is similar between both strings." );
+			else
+				System.out.println(string1 + " and " + string2 + " do not begin similarly.");
+
+	}
+}
