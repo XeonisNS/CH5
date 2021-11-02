@@ -1,0 +1,52 @@
+/*Malcolm Ealy
+ * mxealy0001@student.stcc.edu
+ * 11/1/21
+ * CSC-111
+ * Homework 8 (Chapter 5)
+ * Calculate cosine of x
+ */
+
+import java.util.Scanner;
+
+public class CH5HW2 {
+
+	public static void main(String[] args) {
+		
+	char again = 'y';
+	while(again == 'y')
+
+		{
+			Scanner input = new Scanner(System.in);
+			System.out.println("What value of an angle (in degrees) would you like the calculate the cosine of?");
+			double A = input.nextDouble();
+			double A2;
+			input.close();
+			
+			
+			
+			A2 = A * 3.14 / 180.0;
+			double res = 1;
+	        double sign = 1; 
+	        double factorial = 1;
+	        double power = 1;
+	        for (int i = 1; i < 5; i++)
+	        {
+	            sign = sign * -1;
+	            factorial = factorial * (2 * i - 1) *(2 * i);
+	            power = power * A2 * A2;
+	            res = res + sign * power / factorial;
+	        }
+	     
+	        System.out.println("The value of the cosine of " + A + " is" );
+	        System.out.printf("%5.6f%n", res);
+	        
+	        System.out.println("The value of the cosine of " + A + " using the Math function is" );
+	        System.out.printf("%5.6f%n", Math.cos(A));
+		
+	        Scanner restart = new Scanner(System.in);
+			System.out.println("Would you like to do it again? <y/n>");
+			again = restart.nextLine().charAt(0);
+			restart.close();
+		}       
+	}
+}
